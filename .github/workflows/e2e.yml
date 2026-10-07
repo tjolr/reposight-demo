@@ -1,0 +1,13 @@
+name: E2E tests
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Checkout flow: expected 200, got 500"
+          exit 1

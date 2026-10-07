@@ -1,0 +1,17 @@
+name: Deploy
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "5 * * * *"
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - run: |
+          echo "Rolling out (long on purpose, so the run shows as in progress)"
+          sleep 3000
