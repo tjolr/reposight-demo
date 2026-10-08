@@ -3,10 +3,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: "5 * * * *"
-concurrency:
-  group: deploy
-  cancel-in-progress: true
+    - cron: "*/15 * * * *"
 jobs:
   deploy:
     runs-on: ubuntu-latest
